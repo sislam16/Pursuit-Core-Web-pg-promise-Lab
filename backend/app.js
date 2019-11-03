@@ -4,6 +4,7 @@ const port = 8000;
 const cors = require('cors');
 const usersRouter = require('./routes/usersRouter.js');
 const postsRouter = require('./routes/postsRouter.js')
+const likesRouter = require('./routes/likes.js')
 
 
 app.use(cors())
@@ -21,6 +22,8 @@ app.get('/', (req,res)=>{
 app.use('/users', usersRouter)
 
 app.use('/posts', postsRouter)
+
+app.use('/likes', likesRouter)
 
 app.listen(port, ()=>{
     console.log(`Listening on http://localhost:${port}`)
